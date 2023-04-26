@@ -1,5 +1,10 @@
 # user-rest-api
 
+This service implements a User REST API. 
+It provides API endpoing for adding, modify and delete users thru REST APIs.
+
+It uses Flask and Flask-Restful libraries.
+
 API
 # 1)    GET /users
 
