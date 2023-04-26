@@ -1,12 +1,12 @@
 # user-rest-api
 
 API
-1)    GET /users
+# 1)    GET /users
 
     Returns list of user objects in JSON format
 
 
-2)    GET /user:<user_id>
+# 2)    GET /user:<user_id>
 
     Returns the user details for the give user id.
     Input: 
