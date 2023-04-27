@@ -24,6 +24,11 @@ The following endpoints are available:
 
 This endpoint returns a list of all users objects in the database in JSON format.
 
+##### Example:
+```
+http://localhost:5000/users
+```
+
 
 ## 2) GET /user/<user_id>
 
@@ -57,8 +62,7 @@ http://localhost:5000/user/1
 ## 3) POST /user
 
 This endpoint allows you to add a new user to the database.
-
-Example Input data:
+Input data:
     {
         "user_id": 3,
         "username": "johndoe",
