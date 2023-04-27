@@ -62,7 +62,7 @@ http://localhost:5000/user/1
 ## 3) POST /user
 
 This endpoint allows you to add a new user to the database.
-
+```
 Input:
 {
     'user_id': '3',
@@ -70,7 +70,7 @@ Input:
     'number': '1234567890',
     'email': 'johndoe@example.com'
 }
-
+```
 
 ##### Example:
 ```
