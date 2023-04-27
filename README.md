@@ -65,10 +65,10 @@ This endpoint allows you to add a new user to the database.
 
 Input:
     {
-        "user_id": 3,
-        "username": "johndoe",
-        "number": 1234567890,
-        "email": "johndoe@example.com"
+        'user_id': '3',
+        'username': 'johndoe',
+        'number': '1234567890',
+        'email': 'johndoe@example.com'
     }
 
 
