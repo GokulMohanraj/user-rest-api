@@ -80,12 +80,12 @@ POST http://localhost:5000/user
 ## 4) PUT /user/{user_id}
 
 This endpoint allows you to update the user with the specified `user_id`.
-
+```
 Data:
 {
     "number": 9876543210
 }
-
+```
 ##### Example:
 ```
 PUT http://localhost:5000/user/3
@@ -94,10 +94,10 @@ PUT http://localhost:5000/user/3
 ## 5) DELETE /user/{user_id}
 
 This endpoint allows you to delete the user with the specified `user_id`.
-
-Input
+```
+Input:
     <user_id> = user ID
-     Output:
+Output:
     Response code: 200
         {
             'message': 'User-ID Deleted'
@@ -109,7 +109,7 @@ Input
     {
         'message': 'user_id doesnt exist'
     }
-
+```
 
 ##### Example:
 ```
