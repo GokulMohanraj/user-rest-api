@@ -23,18 +23,18 @@ put_args.add_argument('email', type=str)
 # Define resource classes
 class Data(Resource):
     # Define GET method to retrieve all users data
-    try:
-        def get(self):
+    def get(self):
+        try:
             query = 'SELECT * FROM user_table'
             my_cursor.execute(query)
             result = my_cursor.fetchall()
             return result
-    except Exception as e:
-        return e
+        except Exception as e:
+            return e
 class User(Resource):
     # Define GET method to retrieve user data by user_id
-    try:
-        def get(self, user_id):
+    def get(self, user_id):
+        try:
             query = 'SELECT * FROM user_table WHERE user_id = %s'
             values = (user_id,)
             my_cursor.execute(query, values)
@@ -43,12 +43,12 @@ class User(Resource):
                 return result
             else:
                 return {'message': 'User not found'}, 404
-    except Exception as e:
-        return e
+        except Exception as e:
+            return e
 class post(Resource):
     # Define POST method to add new user data
-    try:
-        def post(self):
+    def post(self):
+        try:
             args = post_args.parse_args()
             user_id = args['user_id']
             query = 'SELECT user_id FROM user_table WHERE user_id = %s'
@@ -66,12 +66,12 @@ class post(Resource):
                 except Exception as e:
                     mydb.rollback()
                     return {'message': str(e)}, 500
-    except Exception as e:
-        return e
+        except Exception as e:
+            return e
 class put(Resource):
     # Define PUT method to update user data by user_id
-    try:
-        def put(self, user_id):
+    def put(self, user_id):
+        try:
             query = 'SELECT * FROM user_table WHERE user_id = %s'
             values = (user_id,)
             my_cursor.execute(query, values)
@@ -94,19 +94,19 @@ class put(Resource):
                 try:
                     my_cursor.execute(query, tuple(values))
                     mydb.commit()
-                    return {'message': 'Updated sucessfully'}
+                    return {'message': 'Updated successfully'}
                 except Exception as e:
                     mydb.rollback()
                     return {'message': str(e)}, 500
             else:
                 return {'message': 'User not found'}, 404
-    except Exception as e:
-        return e
+        except Exception as e:
+            return e
 
 class delete(Resource):
     # Define DELETE method to delete user data by user_id
-    try:
-        def delete(self, user_id):
+    def delete(self, user_id):
+        try:
             query = 'SELECT user_id FROM user_table WHERE user_id = %s'
             values = [user_id]
             my_cursor.execute(query, values)
@@ -122,8 +122,8 @@ class delete(Resource):
                 except Exception as e:
                     mydb.rollback()
                     return {'message': str(e)}, 500
-    except Exception as e:
-        return e
+        except Exception as e:
+            return e
 
 api.add_resource(Data, '/users')
 api.add_resource(User, '/user/<int:user_id>')
